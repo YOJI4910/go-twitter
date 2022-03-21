@@ -91,7 +91,7 @@ func main() {
 }
 
 func searchTweet(w http.ResponseWriter, r *http.Request) {
-	client := newClient("")
+	client := newClient("ここにキーをいれる")
 
 	res, err := client.SearchRecentTweets(context.Background(), "ビットコイン")
 	if err != nil {
