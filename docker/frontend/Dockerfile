@@ -9,7 +9,6 @@ RUN apk --update add vim
 
 WORKDIR $APP_HOME
 
-# COPY ./frontend/package.json $APP_HOME
-# COPY ./frontend/yarn.lock $APP_HOME
+COPY ./frontend $APP_HOME
 
-# RUN yarn install
+RUN yarn install

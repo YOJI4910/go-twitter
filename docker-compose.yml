@@ -3,17 +3,16 @@ version: "3.7"
 services:
   frontend:
     build:
-      context: ./docker/frontend
-      dockerfile: Dockerfile
+      context: ./
+      dockerfile: ./docker/frontend/Dockerfile
     environment:
       NODE_ENV: development
     ports:
       - 3000:3000
     command: yarn dev
     volumes:
-      # - ./frontend/.next:/var/www/frontend/.next
       - ./frontend:/var/www/frontend
-      # - frontend-tmp-data:/var/www/frontend/tmp
+      - frontend-tmp-data:/var/www/frontend/tmp
     tty: true
-# volumes:
-  # frontend-tmp-data:
+volumes:
+  frontend-tmp-data:
